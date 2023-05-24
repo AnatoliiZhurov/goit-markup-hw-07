@@ -1153,6 +1153,7 @@ body {
   width: 100vw;
   height: 100vh;
   padding: 40px;
+  padding-top: 80px;
   background-color: var(--color-white);
   z-index: 50;
 
@@ -1204,9 +1205,17 @@ body {
   margin-bottom: 0;
 }
 
-.mobile-contacts > .link:first-child {
+.mobile-contacts > li:first-child {
   font-weight: 700;
   font-size: 36px;
   line-height: 1.11;
   color: var(--color-iris);
+  margin-bottom: 40px;
+}
+.mobile-adress {
+  display: block;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  color: var(--color-slate);
 }
