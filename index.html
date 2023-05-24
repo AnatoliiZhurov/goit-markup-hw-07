@@ -131,7 +131,8 @@
           <ul class="list workspace-img-list">
             <li class="workspace-list-item">
               <img
-                src="./images/img1.jpg"
+                srcset="./images/workspace/img_1_@1x.jpg 1x, ./images/workspace/img_1_@2x.jpg 2x"
+                src="./images/workspace/img_1_@1x.jpg"
                 alt="phone with several screens"
                 width="360"
                 class="workspace-img-item"
@@ -139,7 +140,8 @@
             </li>
             <li class="workspace-list-item">
               <img
-                src="./images/img2.jpg"
+                srcset="./images/workspace/img_2_@1x.jpg 1x, ./images/workspace/img_2_@2x.jpg 2x"
+                src="./images/workspace/img_2_@1x.jpg"
                 alt="phone with several screens"
                 width="360"
                 class="workspace-img-item"
@@ -147,7 +149,8 @@
             </li>
             <li class="workspace-list-item">
               <img
-                src="./images/img3.jpg"
+                srcset="./images/workspace/img_3_@1x.jpg 1x, ./images/workspace/img_3_@2x.jpg 2x"
+                src="./images/workspace/img_3_@1x.jpg"
                 alt="workplace and iphone in hand"
                 width="360"
                 class="workspace-img-item"
@@ -164,7 +167,14 @@
           <h2 class="header-section">Our Team</h2>
           <ul class="list cards-list">
             <li class="card-item">
-              <img src="./images/team/img1.jpg" alt="Mark Guerrero Portrait" width="264" />
+              <img
+                class="team-avatar"
+                srcset="./images/team/img-1_@1x.jpg 1x, ./images/team/img-1_@2x.jpg 2x"
+                src="./images/team/img-1_@1x.jpg"
+                alt="Mark Guerrero Portrait"
+                width="264"
+                loading="lazy"
+              />
               <div class="card-info">
                 <h3 class="member-name">Mark Guerrero</h3>
                 <p class="member-deskr">Product Designer</p>
@@ -225,7 +235,14 @@
               </div>
             </li>
             <li class="card-item">
-              <img src="./images/team/img2.jpg" alt="Tom Ford Portrait" width="264" />
+              <img
+                class="team-avatar"
+                srcset="./images/team/img-2_@1x.jpg 1x, ./images/team/img-2_@2x.jpg 2x"
+                src="./images/team/img-2_@1x.jpg"
+                alt="Tom Ford Portrait"
+                width="264"
+                loading="lazy"
+              />
               <div class="card-info">
                 <h3 class="member-name">Tom Ford</h3>
                 <p class="member-deskr">Frontend Developer</p>
@@ -286,7 +303,14 @@
               </div>
             </li>
             <li class="card-item">
-              <img src="./images/team/img3.jpg" alt="Camila Garcia Portrait" width="264" />
+              <img
+                class="team-avatar"
+                srcset="./images/team/img-3_@1x.jpg 1x, ./images/team/img-3_@2x.jpg 2x"
+                src="./images/team/img-3_@1x.jpg"
+                alt="Camila Garcia Portrait"
+                width="264"
+                loading="lazy"
+              />
               <div class="card-info">
                 <h3 class="member-name">Camila Garcia</h3>
                 <p class="member-deskr">Marketing</p>
@@ -347,7 +371,14 @@
               </div>
             </li>
             <li class="card-item">
-              <img src="./images/team/img4.jpg" alt="Daniel Wilson Portrait" width="264" />
+              <img
+                class="team-avatar"
+                srcset="./images/team/img-4_@1x.jpg 1x, ./images/team/img-4_@2x.jpg 2x"
+                src="./images/team/img-4_@1x.jpg"
+                alt="Daniel Wilson Portrait"
+                width="264"
+                loading="lazy"
+              />
               <div class="card-info">
                 <h3 class="member-name">Daniel Wilson</h3>
                 <p class="member-deskr">UI Designer</p>
@@ -678,18 +709,8 @@
 
     <div class="menu-container js-menu-container" id="mobile-menu">
       <button class="menu-toggle js-close-menu">
-        <svg
-          fill="currentColor"
-          viewBox="0 0 20 20"
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-        >
-          <path
-            fill-rule="evenodd"
-            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-            clip-rule="evenodd"
-          ></path>
+        <svg class="modal-icon" width="8" height="8">
+          <use href="./images/icons.svg#close-modal"></use>
         </svg>
       </button>
 
