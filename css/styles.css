@@ -55,6 +55,8 @@ Display/margin-resets
 
 img {
   display: block;
+  max-width: 100%;
+  height: auto;
 }
 h1,
 h2,
@@ -68,12 +70,20 @@ p {
 /* ========= Font elements ======== */
 .header-main-font {
   color: var(--color-white);
-  font-size: 56px;
+  font-size: 36px;
   font-weight: 700;
-  line-height: 1.07;
+  line-height: 1.11;
   letter-spacing: 0.02em;
   text-align: center;
 }
+
+@media only screen and (min-width: 768px) {
+  .header-main-font {
+    font-size: 56px;
+    line-height: 1.07;
+  }
+}
+
 .header-section {
   color: var(--color-navy-blue);
   font-size: 36px;
@@ -85,7 +95,7 @@ p {
   margin-bottom: 72px;
 }
 
-/* Main properties */
+/* =================================== Main properties ===================================== */
 body {
   font-family: var(--primary-font, sans-serif);
   font-weight: 400;
@@ -107,18 +117,36 @@ body {
   font-style: normal;
 }
 
-.container {
-  width: 1158px;
-  padding: 0 15px;
-  margin: 0 auto;
-}
-
 .section {
-  padding-top: 120px;
-  padding-bottom: 120px;
+  padding: 96px 0;
 }
 
-/* ========== Header ========= */
+@media only screen and (min-width: 1158px) {
+  .section {
+    padding: 120px 0;
+  }
+}
+
+.container {
+  max-width: 428px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0 16px;
+}
+@media only screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+@media only screen and (min-width: 1158px) {
+  .container {
+    max-width: 1158px;
+    padding-left: 15px;
+    padding: 0 15px;
+  }
+}
+
+/* ======================================== Header ======================================= */
 
 .header {
   border-bottom: 1px solid var(--color-cornflower);
@@ -128,9 +156,10 @@ body {
 .header-container {
   display: flex;
   align-items: center;
+  min-height: 70px;
 }
 
-/* ============== Navigation =============*/
+/* ======================================= Navigation ======================================*/
 
 .header-logo {
   font-family: var(--logo-font, sans-serif);
@@ -140,7 +169,18 @@ body {
   line-height: 1.17;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-  margin-right: 76px;
+  margin-right: auto;
+}
+
+@media only screen and (min-width: 768px) {
+  .header-logo {
+    margin-right: 120px;
+  }
+}
+@media only screen and (min-width: 1158px) {
+  .header-logo {
+    margin-right: 76px;
+  }
 }
 
 .half-header-logo {
@@ -154,10 +194,15 @@ body {
 }
 
 .header-nav-list {
-  display: flex;
-  gap: 40px;
+  display: none;
 }
 
+@media only screen and (min-width: 768px) {
+  .header-nav-list {
+    display: flex;
+    gap: 40px;
+  }
+}
 .nav-list-item {
   position: relative;
   font-weight: 500;
@@ -199,19 +244,36 @@ body {
   opacity: 1;
   background-color: var(--color-ocean);
 }
-/* =============== Addres-contacts ================ */
+/* ======================================== Addres-contacts ========================================= */
 .address {
   font-style: normal;
 }
 
+@media only screen and (max-width: 767px) {
+  .address {
+    display: none;
+  }
+}
+
 .address-list {
   display: flex;
-  gap: 40px;
+  flex-wrap: wrap;
+  gap: 12px 40px;
+  justify-content: end;
 }
+
 .addres-contacts {
-  font-size: 16px;
+  font-size: 12px;
+  line-height: 1.16;
   color: var(--color-slate);
   transition: color var(--anim-fast);
+}
+
+@media only screen and (min-width: 1158px) {
+  .addres-contacts {
+    font-size: 16px;
+    line-height: 1.5;
+  }
 }
 
 .addres-contacts[href='mailto:info@devstudio.com']:hover,
@@ -220,7 +282,7 @@ body {
   color: var(--color-ocean);
 }
 
-/* ============== Hero ============== */
+/* ============================================= Hero ============================================= */
 
 .hero-container {
 }
@@ -236,11 +298,37 @@ body {
   background-size: cover;
 }
 
+@media only screen and (min-width: 1158px) {
+  .hero-section {
+    max-width: 1440px;
+    margin: 0 auto;
+    background-color: var(--color-navy-blue);
+    padding: 188px 0;
+    background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+      url(../images/hero/people-office.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+}
+
 .hero-invite {
-  margin-bottom: 48px;
-  max-width: 496px;
-  margin-right: auto;
-  margin-left: auto;
+  max-width: 320px;
+  margin: 0 auto;
+  margin-bottom: 72px;
+}
+
+@media only screen and (min-width: 768px) {
+  .hero-invite {
+    max-width: 496px;
+    margin-bottom: 36px;
+  }
+}
+
+@media only screen and (min-width: 1158px) {
+  .hero-invite {
+    margin-bottom: 48px;
+  }
 }
 
 .btn {
@@ -278,21 +366,44 @@ body {
 
 .features-list {
   display: flex;
-  gap: 24px;
+  flex-wrap: wrap;
+  gap: 72px 24px;
   justify-content: space-between;
 }
 
-.features-item {
-  flex-basis: calc((100% - 24px * 3) / 4);
+@media only screen and (min-width: 768px) {
+   {
+  }
 }
+@media only screen and (min-width: 1158px) {
+   {
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .features-item {
+    flex-basis: calc((100% - 24px * 1) / 2);
+  }
+}
+@media only screen and (min-width: 1158px) {
+  .features-item {
+    flex-basis: calc((100% - 24px * 3) / 4);
+  }
+}
+
 .features-icon-field {
   height: 112px;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   background-color: var(--color-cloud);
   border-radius: 4px;
   margin-bottom: 8px;
+}
+@media only screen and (min-width: 1158px) {
+  .features-icon-field {
+    display: flex;
+  }
 }
 
 .features-icon {
@@ -300,17 +411,41 @@ body {
 
 .features-name {
   color: var(--color-navy-blue);
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 1.2;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.11;
   letter-spacing: 0.02em;
   margin-bottom: 8px;
+  text-align: center;
 }
 
-/* Workspace */
+@media only screen and (min-width: 1158px) {
+  .features-name {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
+    text-align: left;
+  }
+}
+
+@media only screen and (max-width: 1157px) {
+  .features-deskr {
+    font-weight: 500;
+    font-size: 16px;
+  }
+}
+
+/* ============ Workspace ============= */
 
 .section-workspace {
+  display: block;
   padding-top: 0;
+}
+
+@media only screen and (max-width: 1157px) {
+  .section-workspace {
+    display: none;
+  }
 }
 
 .workspace-img-list {
@@ -331,8 +466,9 @@ body {
 
 .cards-list {
   display: flex;
-  justify-content: space-between;
-  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 72px 24px;
 }
 
 .card-item {
@@ -387,18 +523,42 @@ body {
   fill: var(--color-cloud);
 }
 
-/*============= Customers ============*/
+/*==================================================== Customers ===================================================*/
+
+@media only screen and (min-width: 768px) and (max-width: 1157px) {
+  .customers {
+    max-width: 552px;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1157px) {
+  .customers-container {
+    padding: 0;
+  }
+}
 .header-customer {
   line-height: 1.1;
 }
 .customers-list {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 24px;
+  gap: 72px 24px;
 }
 .customers-item {
-  flex-basis: calc((100% - 24px * 5) / 6);
+  flex-basis: calc((100% - 24px * 1) / 2);
+}
+@media only screen and (min-width: 768px) {
+  .customers-item {
+    flex-basis: calc((100% - 24px * 2) / 3);
+  }
+}
+@media only screen and (min-width: 1158px) {
+  .customers-item {
+    flex-basis: calc((100% - 24px * 5) / 6);
+  }
 }
 .customers-link {
   height: 88px;
@@ -422,21 +582,55 @@ body {
   color: var(--color-ocean);
 }
 
-/*============= Footer ============*/
+/*================================================ Footer ===============================================*/
 
 .gen-info {
   background-color: var(--color-navy-blue);
-  padding-top: 100px;
-  padding-bottom: 100px;
+  padding-top: 96px;
+  padding-bottom: 96px;
+}
+
+@media only screen and (min-width: 768px) {
+  .gen-info {
+    background-color: var(--color-navy-blue);
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
 }
 
 .footer-flex {
-  display: flex;
-  align-items: baseline;
+  padding: 0 15px;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1157px) {
+  .footer-flex {
+    padding-left: 108px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .footer-flex {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+  }
 }
 
 .footer-left-side {
-  margin-right: 120px;
+  margin-bottom: 72px;
+}
+
+@media only screen and (min-width: 768px) {
+  .footer-left-side {
+    margin-right: 24px;
+  }
+}
+
+@media only screen and (min-width: 1158px) {
+  .footer-left-side {
+    margin-right: 120px;
+    margin-bottom: 0;
+  }
 }
 
 .info-logo {
@@ -447,8 +641,14 @@ body {
   line-height: 1.17;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-  display: inline-block;
+  display: block;
   margin-bottom: 16px;
+}
+
+@media only screen and (max-width: 767px) {
+  .info-logo {
+    text-align: center;
+  }
 }
 
 .info-logo-half {
@@ -456,8 +656,20 @@ body {
 }
 
 .push-text {
-  max-width: 264px;
+  max-width: 268px;
   color: var(--color-cloud);
+}
+
+@media only screen and (max-width: 767px) {
+  .push-text {
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .push-text {
+    max-width: 264px;
+  }
 }
 
 .media-text {
@@ -466,9 +678,21 @@ body {
   margin-bottom: 16px;
 }
 
+@media only screen and (max-width: 767px) {
+  .media-text {
+    text-align: center;
+  }
+}
+
 .gen-info .socials {
-  justify-content: start;
+  justify-content: center;
   gap: 16px;
+}
+
+@media only screen and (min-width: 768px) {
+  .gen-info .socials {
+    justify-content: start;
+  }
 }
 
 .gen-info .social-link:hover,
@@ -476,11 +700,18 @@ body {
   background-color: var(--color-green);
 }
 
-.social-media {
-  margin-right: 80px;
+@media only screen and (max-width: 767px) {
+  .social-media {
+    margin-bottom: 72px;
+  }
+}
+@media only screen and (min-width: 1158px) {
+  .social-media {
+    margin-right: 80px;
+  }
 }
 
-/* ====== Subscribe ===== */
+/* =============================================== Subscribe ============================================== */
 
 .subscribe {
 }
@@ -488,14 +719,29 @@ body {
 }
 .sub-form-wrapper {
   display: flex;
-  gap: 24px;
-  width: 453px;
+  flex-wrap: wrap;
+  gap: 16px 24px;
+  justify-content: center;
 }
+
+@media only screen and (min-width: 768px) {
+  .sub-form-wrapper {
+    width: 453px;
+  }
+}
+
 .sub-form-field {
   display: block;
-  flex-basis: 264px;
+  flex-basis: 100%;
   height: 40px;
 }
+
+@media only screen and (min-width: 768px) {
+  .sub-form-field {
+    flex-basis: 264px;
+  }
+}
+
 .sub-form-input {
   width: 100%;
   height: 100%;
@@ -524,11 +770,19 @@ body {
   gap: 16px;
   border: none;
 }
+
+@media only screen and (max-width: 767px) {
+  .sub-btn {
+    flex-grow: 0;
+    min-width: 165px;
+    min-height: 40px;
+  }
+}
 .sub-btn-text {
 }
 .sub-icon {
 }
-/* ========= Portfolio Main ========= */
+/* ================================================ Portfolio Main ================================================ */
 
 .gallery-section {
   padding: 96px 0 120px;
@@ -560,7 +814,7 @@ body {
     0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
-/* ========= Projects gallery ========== */
+/* ================================================ Projects gallery ================================================= */
 
 .project-examples-list {
   display: flex;
@@ -629,7 +883,7 @@ body {
   margin-bottom: 8px;
 }
 
-/* ======== Modal =======  */
+/* ======================================= Modal ======================================  */
 
 .backdrop {
   position: fixed;
@@ -652,7 +906,7 @@ body {
   top: calc(50%);
   left: calc(50%);
   transform: translateX(-50%) translateY(-50%) scale(1);
-  width: 408px;
+  width: 392px;
   min-height: 584px;
   background-color: var(--color-dairy);
   border-radius: 4px;
@@ -661,6 +915,12 @@ body {
 
   transition: transform var(--anim-fast);
   padding: 72px 24px 24px;
+}
+
+@media only screen and (min-width: 768px) {
+  .modal {
+    width: 408px;
+  }
 }
 
 .backdrop.is-hidden .modal {
@@ -706,7 +966,7 @@ body {
   fill: var(--color-white);
 }
 
-/* ======== Modal form ========= */
+/* =================================== Modal form ==================================== */
 
 .modal-title {
   font-size: 16px;
@@ -798,7 +1058,7 @@ body {
   color: var(--color-light-slate);
 }
 
-/* ======== Modal send button ======== */
+/* ================================ Modal send button ================================ */
 
 .send-btn {
   display: block;
@@ -851,4 +1111,102 @@ body {
 .form-agreement-link {
   color: var(--color-iris);
   line-height: 1.33;
+}
+
+/* =================================== Mobile menu =================================== */
+
+.menu-toggle {
+  min-height: 40px;
+  min-width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  border-radius: 50%;
+  outline: none;
+}
+
+@media (min-width: 768px) {
+  .menu-toggle {
+    display: none;
+  }
+}
+
+.menu-toggle:hover,
+.menu-toggle:focus {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.menu-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  width: 100vw;
+  height: 100vh;
+  padding: 40px;
+  background-color: var(--color-white);
+  z-index: 50;
+
+  transform: translateX(100%);
+  transition: transform 250ms ease-in-out;
+}
+
+.menu-container.is-open {
+  transform: translateX(0);
+}
+
+.menu-container .menu-toggle {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
+
+.mobile-menu .link {
+  display: block;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 40px;
+  color: var(--color-navy-blue);
+  margin-bottom: 90;
+}
+
+.mobile-menu > li:not(:last-child) {
+  margin-bottom: 90px;
+}
+
+.mobile-menu .active {
+  color: var(--color-ocean);
+}
+
+.mobile-menu {
+  margin-bottom: auto;
+}
+
+.mobile-contacts {
+  margin-bottom: 48px;
+}
+.soc-mm {
+  justify-content: start;
+  gap: 56px;
+}
+
+.menu-container .social-media {
+  margin-bottom: 0;
+}
+
+.mobile-contacts > .link:first-child {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.11;
+  color: var(--color-iris);
 }
