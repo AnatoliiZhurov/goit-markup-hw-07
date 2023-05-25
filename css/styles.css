@@ -287,10 +287,11 @@ body {
 .hero-container {
 }
 .hero-section {
-  max-width: 1440px;
+  max-width: 428px;
+  height: 432px;
   margin: 0 auto;
   background-color: var(--color-navy-blue);
-  padding: 188px 0;
+  padding: 112px 0;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -300,7 +301,7 @@ body {
 @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
   .hero-section {
     background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
-      url(../images/hero/Dark-bg_mob_@1x.jpg);
+      url(../images/hero/Dark-bg_mob_@2x.jpg);
   }
 }
 
@@ -332,6 +333,21 @@ body {
       background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
         url(../images/hero/people-office_desk_@2x.jpg);
     }
+  }
+}
+/* Background hero size */
+@media only screen and (min-width: 768px) {
+  .hero-section {
+    max-width: 768px;
+    min-height: 436px;
+  }
+}
+
+@media only screen and (min-width: 1158px) {
+  .hero-section {
+    max-width: 1440px;
+    padding: 188px 0;
+    min-height: 600px;
   }
 }
 
@@ -382,7 +398,7 @@ body {
   background-color: var(--color-ocean);
 }
 
-/* ============== Features-section =================*/
+/* ======================================= Features-section ==========================================*/
 
 .features-section {
 }
@@ -627,7 +643,8 @@ body {
 
 @media only screen and (min-width: 768px) and (max-width: 1157px) {
   .footer-flex {
-    padding-left: 108px;
+    padding: 0;
+    max-width: 550px;
   }
 }
 
@@ -925,12 +942,16 @@ body {
   pointer-events: none;
 }
 .modal {
+  width: 95%;
+  max-width: 392px;
+  height: 95%;
+  max-height: 584px;
+  overflow: scroll;
+
   position: absolute;
   top: calc(50%);
   left: calc(50%);
   transform: translateX(-50%) translateY(-50%) scale(1);
-  width: 392px;
-  min-height: 584px;
   background-color: var(--color-dairy);
   border-radius: 4px;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
@@ -942,7 +963,7 @@ body {
 
 @media only screen and (min-width: 768px) {
   .modal {
-    width: 408px;
+    max-width: 408px;
   }
 }
 
@@ -1113,7 +1134,7 @@ body {
   border-color: var(--color-iris);
 }
 
-/* ======== Agreemenrs ======= */
+/* ======================================== Agreemenrs ======================================= */
 
 .unchecked {
   opacity: 1;
@@ -1223,7 +1244,13 @@ body {
 }
 .soc-mm {
   justify-content: start;
-  gap: 56px;
+  gap: 35px;
+}
+
+@media only screen and (min-width: 428px) {
+  .soc-mm {
+    gap: 56px;
+  }
 }
 
 .menu-container .social-media {
@@ -1234,8 +1261,11 @@ body {
   font-weight: 700;
   font-size: 36px;
   line-height: 1.11;
-  color: var(--color-iris);
   margin-bottom: 40px;
+}
+
+.mobile-tel {
+  color: var(--color-iris);
 }
 .mobile-adress {
   display: block;
