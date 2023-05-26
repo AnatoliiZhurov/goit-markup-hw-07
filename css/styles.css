@@ -458,12 +458,17 @@ body {
   text-align: center;
 }
 
+@media only screen and (min-width: 768px) {
+  .features-name {
+    text-align: left;
+  }
+}
+
 @media only screen and (min-width: 1158px) {
   .features-name {
     font-weight: 500;
     font-size: 20px;
     line-height: 1.2;
-    text-align: left;
   }
 }
 
